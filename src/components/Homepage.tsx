@@ -19,7 +19,7 @@ export function Homepage() {
     params.set("showDate", config.showDate.toString());
     params.set("showBox", config.showBox.toString());
 
-    return `/testcard.html?${params.toString()}`;
+    return `testcard.html?${params.toString()}`;
   };
 
   const openTestcard = () => {
@@ -133,9 +133,11 @@ export function Homepage() {
               Open Full Testcard
             </button>
             <button
-              onClick={() =>
-                navigator.clipboard.writeText(window.location.origin + generateTestcardUrl())
-              }
+              onClick={() => {
+                const currentUrl = new URL(window.location.href);
+                const testcardUrl = new URL(generateTestcardUrl(), currentUrl);
+                navigator.clipboard.writeText(testcardUrl.href);
+              }}
               className="secondary-button">
               Copy URL
             </button>
