@@ -83,53 +83,23 @@ export class SMPTEPatternRenderer {
 
     // White reference
     this.ctx.fillStyle = SMPTE_COLORS.white2;
-    this.ctx.fillRect(
-      segmentWidth * 3,
-      bottomTop,
-      segmentWidth * 1,
-      bottomHeight
-    );
+    this.ctx.fillRect(segmentWidth * 3, bottomTop, segmentWidth * 1, bottomHeight);
 
     // PLUGE bars (super black, black, white)
     this.ctx.fillStyle = SMPTE_COLORS.superBlack;
-    this.ctx.fillRect(
-      segmentWidth * 4,
-      bottomTop,
-      segmentWidth * 1.5,
-      bottomHeight
-    );
+    this.ctx.fillRect(segmentWidth * 4, bottomTop, segmentWidth * 1.5, bottomHeight);
 
     this.ctx.fillStyle = SMPTE_COLORS.black2;
-    this.ctx.fillRect(
-      segmentWidth * 5.5,
-      bottomTop,
-      segmentWidth * 1,
-      bottomHeight
-    );
+    this.ctx.fillRect(segmentWidth * 5.5, bottomTop, segmentWidth * 1, bottomHeight);
 
     this.ctx.fillStyle = SMPTE_COLORS.white2;
-    this.ctx.fillRect(
-      segmentWidth * 6.5,
-      bottomTop,
-      segmentWidth * 1,
-      bottomHeight
-    );
+    this.ctx.fillRect(segmentWidth * 6.5, bottomTop, segmentWidth * 1, bottomHeight);
 
     this.ctx.fillStyle = SMPTE_COLORS.black2;
-    this.ctx.fillRect(
-      segmentWidth * 7.5,
-      bottomTop,
-      segmentWidth * 1.5,
-      bottomHeight
-    );
+    this.ctx.fillRect(segmentWidth * 7.5, bottomTop, segmentWidth * 1.5, bottomHeight);
 
     // Right section: +Q
     this.ctx.fillStyle = "#230f23"; // +Q
-    this.ctx.fillRect(
-      segmentWidth * 9,
-      bottomTop,
-      segmentWidth * 3,
-      bottomHeight
-    );
+    this.ctx.fillRect(segmentWidth * 9, bottomTop, segmentWidth * 3, bottomHeight);
   }
 }

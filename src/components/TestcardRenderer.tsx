@@ -9,11 +9,7 @@ interface TestcardRendererProps {
   className?: string;
 }
 
-export function TestcardRenderer({
-  config,
-  dimensions,
-  className,
-}: TestcardRendererProps) {
+export function TestcardRenderer({ config, dimensions, className }: TestcardRendererProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number>();
 
@@ -52,14 +48,7 @@ export function TestcardRenderer({
 
       // Render text overlay
       if (config.text) {
-        renderText(
-          ctx,
-          config.text,
-          config.textColor,
-          config.showBox,
-          width,
-          height
-        );
+        renderText(ctx, config.text, config.textColor, config.showBox, width, height);
       }
 
       // Render date and time if enabled
@@ -71,7 +60,7 @@ export function TestcardRenderer({
           config.showDate,
           config.showTime,
           width,
-          height
+          height,
         );
       }
 
@@ -105,7 +94,7 @@ function renderText(
   color: string,
   showBox: boolean,
   width: number,
-  height: number
+  height: number,
 ): void {
   const fontSize = Math.max(24, width / 20);
   ctx.font = `bold ${fontSize}px Arial, sans-serif`;
@@ -127,7 +116,7 @@ function renderText(
       x - textWidth / 2 - padding,
       y - textHeight / 2 - padding,
       textWidth + padding * 2,
-      textHeight + padding * 2
+      textHeight + padding * 2,
     );
   }
 
@@ -143,7 +132,7 @@ function renderDateTime(
   showDate: boolean,
   showTime: boolean,
   width: number,
-  height: number
+  height: number,
 ): void {
   const now = new Date();
   const fontSize = Math.max(20, width / 25);
@@ -171,7 +160,7 @@ function renderDateTime(
         dateX - padding,
         dateY - fontSize - padding,
         dateMetrics.width + padding * 2,
-        fontSize + padding * 2
+        fontSize + padding * 2,
       );
     }
 
@@ -191,7 +180,7 @@ function renderDateTime(
         timeX - timeMetrics.width - padding,
         timeY - fontSize - padding,
         timeMetrics.width + padding * 2,
-        fontSize + padding * 2
+        fontSize + padding * 2,
       );
     }
 
@@ -212,7 +201,7 @@ function renderDateTime(
         x - dateMetrics.width / 2 - padding,
         y - fontSize - padding,
         dateMetrics.width + padding * 2,
-        fontSize + padding * 2
+        fontSize + padding * 2,
       );
     }
 
@@ -233,7 +222,7 @@ function renderDateTime(
         x - timeMetrics.width / 2 - padding,
         y - fontSize - padding,
         timeMetrics.width + padding * 2,
-        fontSize + padding * 2
+        fontSize + padding * 2,
       );
     }
 

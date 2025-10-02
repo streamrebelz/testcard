@@ -44,11 +44,9 @@ export function Homepage() {
               value={config.aspectRatio}
               onChange={(e) =>
                 updateConfig({
-                  aspectRatio: (e.target as HTMLSelectElement)
-                    .value as AspectRatio,
+                  aspectRatio: (e.target as HTMLSelectElement).value as AspectRatio,
                 })
-              }
-            >
+              }>
               <option value="16:9">16:9</option>
               <option value="4:3">4:3</option>
             </select>
@@ -129,17 +127,16 @@ export function Homepage() {
           </div>
 
           <div className="action-buttons">
-            <button onClick={openTestcard} className="primary-button">
+            <button
+              onClick={openTestcard}
+              className="primary-button">
               Open Full Testcard
             </button>
             <button
               onClick={() =>
-                navigator.clipboard.writeText(
-                  window.location.origin + generateTestcardUrl()
-                )
+                navigator.clipboard.writeText(window.location.origin + generateTestcardUrl())
               }
-              className="secondary-button"
-            >
+              className="secondary-button">
               Copy URL
             </button>
           </div>

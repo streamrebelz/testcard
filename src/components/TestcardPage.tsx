@@ -12,9 +12,7 @@ export function TestcardPage() {
     const urlParams = new URLSearchParams(window.location.search);
 
     const newConfig: TestcardConfig = {
-      aspectRatio:
-        (urlParams.get("aspectRatio") as AspectRatio) ||
-        DEFAULT_CONFIG.aspectRatio,
+      aspectRatio: (urlParams.get("aspectRatio") as AspectRatio) || DEFAULT_CONFIG.aspectRatio,
       text: urlParams.get("text") || undefined,
       textColor: urlParams.get("textColor")
         ? `#${urlParams.get("textColor")}`
